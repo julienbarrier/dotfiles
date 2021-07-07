@@ -28,6 +28,7 @@
 * [Seven habits of text editing](https://www.moolenaar.net/habits.html)
 * [Vim Awesome](https://vimawesome.com)
 * [Big Pile of Vim-like](https://vim.reversed.top)
+* [myvim](https://github.com/junegunn/myvim)
 * [r/vim](https://www.reddit.com/r/vim/)
 
 `:wq`
