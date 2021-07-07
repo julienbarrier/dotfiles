@@ -129,6 +129,8 @@ Plug 'mattn/gist-vim'
 Plug 'junegunn/seoul256.vim'
 Plug 'tomasr/molokai'
 Plug 'joshdick/onedark.vim'
+Plug 'julienbarrier/bogster.vim'
+Plug 'HenryNewcomer/vim-theme-papaya'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'preservim/nerdtree' |
     \ Plug 'Xuyuanp/nerdtree-git-plugin' |
@@ -140,9 +142,8 @@ call plug#end()
 
 "plugin dependent config
 let g:molokai_original = 1
-colorscheme molokai "default theme
+colorscheme papaya "default theme
 let g:vim_markdown_folding_disabled = 1 "on plug:vim-markdown, disable default folding
-set guifont=DroidSansMono\ Nerd\ Font:h11 "devicons font
 
 " ========================
 " programming: autocompile
