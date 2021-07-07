@@ -104,4 +104,6 @@ Plug 'junegunn/gv.vim' "git commit browser
 Plug 'whatyouhide/vim-lengthmatters'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
+Plug 'junegunn/seoul256.vim'
+Plug 'tomasr/molokai'
 call plug#end()

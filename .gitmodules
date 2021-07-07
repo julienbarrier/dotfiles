@@ -28,3 +28,12 @@
 [submodule ".vim/plugged/gist-vim"]
 	path = .vim/plugged/gist-vim
 	url = git@github.com:mattn/gist-vim.git
+[submodule ".vim/plugged/seoul256.vim"]
+	path = .vim/plugged/seoul256.vim
+	url = git@github.com:junegunn/seoul256.vim.git
+[submodule ".vim/plugged/molokai"]
+	path = .vim/plugged/molokai
+	url = git@github.com:tomasr/molokai.git
+[submodule ".vim/plugged/vim-markdown"]
+	path = .vim/plugged/vim-markdown
+	url = git@github.com:plasticboy/vim-markdown.git
