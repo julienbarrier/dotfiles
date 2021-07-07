@@ -1,3 +1,30 @@
 [submodule ".vim/plugged/vim-plug"]
 	path = .vim/plugged/vim-plug
 	url = git@github.com:junegunn/vim-plug.git
+[submodule ".vim/plugged/goyo.vim"]
+	path = .vim/plugged/goyo.vim
+	url = git@github.com:junegunn/goyo.vim.git
+[submodule ".vim/plugged/lightline.vim"]
+	path = .vim/plugged/lightline.vim
+	url = git@github.com:itchiny/lightline.vim.git
+[submodule ".vim/plugged/vim-latex"]
+	path = .vim/plugged/vim-latex
+	url = git@github.com:vim-latex/vim-latex.git
+[submodule ".vim/plugged/tabular"]
+	path = .vim/plugged/tabular
+	url = git@github.com:godlygeek/tabular.git
+[submodule ".vim/plugged/vim-fugitive"]
+	path = .vim/plugged/vim-fugitive
+	url = git@github.com:tpope/vim-fugitive
+[submodule ".vim/plugged/gv.vim"]
+	path = .vim/plugged/gv.vim
+	url = git@github.com:junegunn/gv.vim.git
+[submodule ".vim/plugged/vim-lengthmatters"]
+	path = .vim/plugged/vim-lengthmatters
+	url = git@github.com:whatyouhide/vim-lengthmatters.git
+[submodule ".vim/plugged/webapi-vim"]
+	path = .vim/plugged/webapi-vim
+	url = git@github.com:mattn/webapi-vim.git
+[submodule ".vim/plugged/gist-vim"]
+	path = .vim/plugged/gist-vim
+	url = git@github.com:mattn/gist-vim.git
