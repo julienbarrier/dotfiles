@@ -1,5 +1,5 @@
 "
-" vimrc
+" .vimrc
 " Julien Barrier
 " julien.barrier@espci.org
 "
@@ -8,6 +8,12 @@ set nocompatible                "we want vim, not vi
 
 filetype plugin indent on       "load plugins according to detected filetype
 syntax on                       "syntax highlighting
+
+set shell=sh
+
+" Set to auto read when a file is changed from the outside
+set autoread
+au FocusGained,BufEnter * checktime
 
 set autoindent                  "indent according to previous line
 set expandtab                   "use spaces instead of tabs
@@ -51,18 +57,23 @@ set ruler
 set number
 set title
 set visualbell
-set backup
+set nobackup "everything is in git anyway
+set nowb
 "set backupdir=~/.vim_backup
 set noswapfile
 
+" persistent mode to undo stuff even after closing a file
+try
+set undodir=~/.vim_runtime/temp_dirs/undodir
+set undofile
+catch
+endtry
+
 
 set t_Co=256
-set encoding=utf-8
+set encoding=utf8
 set fileencoding=utf-8
 
-"theme molokai
-let g:molokai_original = 1
-colorscheme molokai
 
 " colorise nbsp
 highlight NbSp ctermbg=lightgray guibg=lightred
@@ -74,22 +85,33 @@ source ~/.vimrc_bepo            "French dvorak keyboard layourt (bépo)
 set spellfile   =~/.vim/spell/en.utf-8.add,~/.vim/spell/fr.utf-8.add
 set spelllang   =en,fr
 
+" parenthesis/bracket
+vnoremap $1 <esc>`>a)<esc>`<i(<esc>
+vnoremap $2 <esc>`>a]<esc>`<i[<esc>
+vnoremap $3 <esc>`>a}<esc>`<i{<esc>
+vnoremap $$ <esc>`>a"<esc>`<i"<esc>
+vnoremap $q <esc>`>a'<esc>`<i'<esc>
+vnoremap $e <esc>`>a`<esc>`<i`<esc>
+
+" Map auto complete of (, ", ', [
+inoremap $1 ()<esc>i
+inoremap $2 []<esc>i
+inoremap $3 {}<esc>i
+inoremap $4 {<esc>o}<esc>O
+inoremap $q ''<esc>i
+inoremap $e ""<esc>i
+
 "breaking
 set wrap
 set nolinebreak
 set breakindent
 set breakindentopt  =min:40
 
+"set gfn=IBM\ Plex\ Mono:h14 ",DroidSansMono\ Nerd\ Font:h11,Hack:h14,Source\ Code\ Pro:h15,Menlo:h15 "Source code pro font
 
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
-
-
-
-
-
-
 
 "Pluggins vim. here the list of all installed (or to be installed) plugins
 call plug#begin('~/.vim/plugged')
@@ -106,4 +128,44 @@ Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 Plug 'junegunn/seoul256.vim'
 Plug 'tomasr/molokai'
+Plug 'joshdick/onedark.vim'
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'preservim/nerdtree' |
+    \ Plug 'Xuyuanp/nerdtree-git-plugin' |
+    \ Plug 'tiagofumo/vim-nerdtree-syntax-highlight' |
+    \ Plug 'PhilRunninger/nerdtree-buffer-ops' |
+    \ Plug 'PhilRunninger/nerdtree-visual-selection' |
+    \ Plug 'ryanoasis/vim-devicons' | "better to load this one at the end
 call plug#end()
+
+"plugin dependent config
+let g:molokai_original = 1
+colorscheme molokai "default theme
+let g:vim_markdown_folding_disabled = 1 "on plug:vim-markdown, disable default folding
+set guifont=DroidSansMono\ Nerd\ Font:h11 "devicons font
+
+" ========================
+" programming: autocompile
+" ========================
+
+map <F5> :call CompileRun()<CR>
+imap <F5> <Esc>:call CompileRun()<CR>
+vmap <F5> <Esc>:call CompileRun()<CR>
+
+func! CompileRun()
+exec "w"
+if &filetype == 'c'
+    exec "!gcc % -o %<"
+    exec "!time ./%<"
+elseif &filetype == 'cpp'
+    exec "!g++ % -o %<"
+    exec "!time ./%<"
+elseif &filetype == 'sh'
+    exec "!time bash %"
+elseif &filetype == 'python'
+    exec "!time python3 %"
+elseif &filetype == 'html'
+    exec "!open -a Safari % &"
+    exec "!time go run %"
+endif
+endfunc

@@ -25,21 +25,21 @@ fi
 #   1.  ENVIRONMENT CONFIGURATION
 #   -------------------------------
 
-#export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
-#export CLICOLOR=1
-#export LSCOLORS=ExFxBxDxCxegedabagacad
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
 
-#D=$'\e[37;40m'
-#PINK=$'\e[35;40m'
-#GREEN=$'\e[32;40m'
-#ORANGE=$'\e[33;40m'
+D=$'\e[37;40m'
+PINK=$'\e[35;40m'
+GREEN=$'\e[32;40m'
+ORANGE=$'\e[33;40m'
 
-#hg_ps1() {
-#    hg prompt "{${D} on ${PINK}{branch}}{${D} at ${ORANGE}{bookmark}}{${GREEN}{status}}" 2> /dev/null
-#}
+hg_ps1() {
+    hg prompt "{${D} on ${PINK}{branch}}{${D} at ${ORANGE}{bookmark}}{${GREEN}{status}}" 2> /dev/null
+}
 
-#export PS1='\n${PINK}\u ${D}at ${ORANGE}\h ${D}in ${GREEN}\w$(hg_ps1)\
-#${D}\n$ '
+export PS1='\n${PINK}\u ${D}at ${ORANGE}\h ${D}in ${GREEN}\w$(hg_ps1)\
+${D}\n$ '
 
 #   Change Prompt
 #   ------------------------------------------------------------

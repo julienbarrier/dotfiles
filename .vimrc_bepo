@@ -111,3 +111,18 @@ noremap 9 (
 noremap 0 )
 noremap ° _
 noremap ` +
+
+"NERDTree
+let NERDTreeMapOpenInTab='h'
+let NERDTreeMapOpenInTabSilent='H'
+let NERDTreeMapOpenVSplit='<C-v>'
+let NERDTreeMapJumpFirstChild='S'
+let NERDTreeMapJumpLastChild='T'
+let NERDTreeMapJumpNextSibling='<C-T>'
+let NERDTreeMapJumpPrevSibling='<C-S>'
+let NERDTreeMapJumpParent='j'
+let NERDTreeMapRefresh='o'
+let NERDTreeMapRefresh='O'
+let NERDTreeMapOpenInTab='è'
+let NERDTreeMapOpenInTabSilent='È'
+let NERDTreeMapActivateNode='l'

@@ -37,3 +37,27 @@
 [submodule ".vim/plugged/vim-markdown"]
 	path = .vim/plugged/vim-markdown
 	url = git@github.com:plasticboy/vim-markdown.git
+[submodule ".vim/plugged/onedark.vim"]
+	path = .vim/plugged/onedark.vim
+	url = git@github.com:joshdick/onedark.vim.git
+[submodule ".vim/plugged/python-mode"]
+	path = .vim/plugged/python-mode
+	url = git@github.com:python-mode/python-mode.git
+[submodule ".vim/plugged/nerdtree"]
+	path = .vim/plugged/nerdtree
+	url = git@github.com:preservim/nerdtree.git
+[submodule ".vim/plugged/nerdtree-git-plugin"]
+	path = .vim/plugged/nerdtree-git-plugin
+	url = git@github.com:Xuyuanp/nerdtree-git-plugin
+[submodule ".vim/plugged/vim-devicons"]
+	path = .vim/plugged/vim-devicons
+	url = git@github.com:ryanoasis/vim-devicons.git
+[submodule ".vim/plugged/vim-nerdtree-syntax-highlight"]
+	path = .vim/plugged/vim-nerdtree-syntax-highlight
+	url = git@github.com:tiagofumo/vim-nerdtree-syntax-highlight.git
+[submodule ".vim/plugged/nerdtree-buffer-ops"]
+	path = .vim/plugged/nerdtree-buffer-ops
+	url = git@github.com:PhilRunninger/nerdtree-buffer-ops
+[submodule ".vim/plugged/nerdtree-visual-selection"]
+	path = .vim/plugged/nerdtree-visual-selection
+	url = git@github.com:PhilRunninger/nerdtree-visual-selection.git
