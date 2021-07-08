@@ -67,3 +67,24 @@
 [submodule ".vim/plugged/vim-theme-papaya"]
 	path = .vim/plugged/vim-theme-papaya
 	url = git@github.com:HenryNewcomer/vim-theme-papaya
+[submodule ".vim/plugged/vim-zenroom2"]
+	path = .vim/plugged/vim-zenroom2
+	url = git@github.com:amix/vim-zenroom2
+[submodule ".vim/plugged/pleasant.vim"]
+	path = .vim/plugged/pleasant.vim
+	url = git@github.com:RohanPoojary/pleasant.vim.git
+[submodule ".vim/plugged/vim-xcode-dark-theme"]
+	path = .vim/plugged/vim-xcode-dark-theme
+	url = git@github.com:nickaroot/vim-xcode-dark-theme.git
+[submodule ".vim/plugged/vim-commentary"]
+	path = .vim/plugged/vim-commentary
+	url = git@github.com:tpope/vim-commentary.git
+[submodule ".vim/plugged/vim-less"]
+	path = .vim/plugged/vim-less
+	url = git@github.com:groenewege/vim-less.git
+[submodule ".vim/plugged/vim-javascript"]
+	path = .vim/plugged/vim-javascript
+	url = git@github.com:pangloss/vim-javascript.git
+[submodule ".vim/plugged/vim-ruby"]
+	path = .vim/plugged/vim-ruby
+	url = git@github.com:vim-ruby/vim-ruby.git
