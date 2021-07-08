@@ -131,7 +131,17 @@ Plug 'tomasr/molokai'
 Plug 'joshdick/onedark.vim'
 Plug 'julienbarrier/bogster.vim'
 Plug 'HenryNewcomer/vim-theme-papaya'
+Plug 'RohanPoojary/pleasant.vim'
+Plug 'nickaroot/vim-xcode-dark-theme'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'amix/vim-zenroom2'
+Plug 'tpope/vim-commentary'
+Plug 'groenewege/vim-less'
+Plug 'pangloss/vim-javascript'
+Plug 'vim-ruby/vim-ruby'
+Plug 'vim-perl/vim-perl'
+Plug 'preservim/vim-wordy'
+Plug 'gko/vim-coloresque'
 Plug 'preservim/nerdtree' |
     \ Plug 'Xuyuanp/nerdtree-git-plugin' |
     \ Plug 'tiagofumo/vim-nerdtree-syntax-highlight' |
@@ -141,9 +151,19 @@ Plug 'preservim/nerdtree' |
 call plug#end()
 
 "plugin dependent config
-let g:molokai_original = 1
-colorscheme papaya "default theme
+set termguicolors
+"let g:molokai_original = 1
+let g:rehash256 = 1
+let g:seoul256_background = 233
+colorscheme molokai "pleasant papaya default theme
 let g:vim_markdown_folding_disabled = 1 "on plug:vim-markdown, disable default folding
+
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
+" open NERDTree on any tab
+autocmd BufWinEnter * silent NERDTreeMirror
+
 
 " ========================
 " programming: autocompile

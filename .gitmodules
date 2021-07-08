@@ -88,3 +88,12 @@
 [submodule ".vim/plugged/vim-ruby"]
 	path = .vim/plugged/vim-ruby
 	url = git@github.com:vim-ruby/vim-ruby.git
+[submodule ".vim/plugged/vim-wordy"]
+	path = .vim/plugged/vim-wordy
+	url = git@github.com:preservim/vim-wordy
+[submodule ".vim/plugged/vim-coloresque"]
+	path = .vim/plugged/vim-coloresque
+	url = git@github.com:gko/vim-coloresque.git
+[submodule ".vim/plugged/vim-perl"]
+	path = .vim/plugged/vim-perl
+	url = git@github.com:vim-perl/vim-perl.vim
