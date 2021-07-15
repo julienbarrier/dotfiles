@@ -1,0 +1,14 @@
+# Ignore everything
+*
+
+# But not these files...
+!gitconfig*
+!LICENSE.md
+!README.md
+!.vimrc
+!.bashrc
+!.bash_profile
+!.vimrc_bepo
+!monokai.terminal/
+!.vim/
+!.jupyter/

@@ -117,6 +117,7 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug' "let Plug update itself
 Plug 'junegunn/goyo.vim' "minimalist theme
+Plug 'junegunn/limelight.vim' "focus
 Plug 'itchyny/lightline.vim' "the bar
 Plug 'vim-latex/vim-latex'
 Plug 'godlygeek/tabular' "necessary for markdown
@@ -142,6 +143,11 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'vim-perl/vim-perl'
 Plug 'preservim/vim-wordy'
 Plug 'gko/vim-coloresque'
+if has('nvim') || has('patch-8.0.902')
+  Plug 'mhinz/vim-signify'
+else
+  Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
+endif
 Plug 'preservim/nerdtree' |
     \ Plug 'Xuyuanp/nerdtree-git-plugin' |
     \ Plug 'tiagofumo/vim-nerdtree-syntax-highlight' |
@@ -155,8 +161,9 @@ set termguicolors
 "let g:molokai_original = 1
 let g:rehash256 = 1
 let g:seoul256_background = 233
-colorscheme molokai "pleasant papaya default theme
+colorscheme bogster "molokai pleasant papaya default theme
 let g:vim_markdown_folding_disabled = 1 "on plug:vim-markdown, disable default folding
+let g:goyo_width = 81
 
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |

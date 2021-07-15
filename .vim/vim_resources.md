@@ -23,6 +23,7 @@
 * [@PickRelated](https://github.com/PickRelated/dotfiles)
 * [@ryanoasis](https://github.com/ryanoasis/dotfiles)
 * [@scrooloose](https://github.com/scrooloose/vimfiles)
+* [@sdiebolt](https://github.com/sdiebolt/dotfiles)
 * [@skwp](https://github.com/skwp/dotfiles)
 * [@statico](https://github.com/statico/dotfiles)
 * [@vgod](https://github.com/vgod/vimrc)
