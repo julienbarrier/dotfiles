@@ -1,1 +1,19 @@
 set selection-clipboard clipboard
+
+# keymaps for the bépo keyboard layout
+map t scroll down
+map s scroll up
+map c scroll left
+map r scroll right
+map T navigate next
+map S navigate previous
+map p rotate rotate-cw
+map u reload
+map b adjust_window best-fit
+map a adjust_window width
+map [index] t navigate_index down
+map [index] s navigate_index up
+map [index] r navigate_index expand
+map [index] c navigate_index collapse
+map [index] R navigate_index expand-all
+map [index] C navigate_index collapse-all

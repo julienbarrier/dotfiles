@@ -165,9 +165,11 @@ colorscheme bogster "molokai pleasant papaya default theme
 let g:vim_markdown_folding_disabled = 1 "on plug:vim-markdown, disable default folding
 let g:goyo_width = 81
 "vimtex-dependent config:
-if empty(v:servername) && exists('*remote_startserver')
-    call remote_startserver('VIM')
-endif
+"if empty(v:servername) && exists('*remote_startserver')
+"    call remote_startserver('VIM')
+"endif
+let g:vimtex_complete_close_braces = 1
+let g:vimtex_view_method = 'zathura'
 
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |

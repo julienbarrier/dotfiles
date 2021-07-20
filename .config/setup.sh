@@ -25,6 +25,11 @@ brew install mutt
 brew install node
 brew install python@3.9
 brew install wget
+brew tap zegervdv/zathura
+brew install zathura
+brew install zathura-pdf-poppler
+mkdir -p $(brew --prefix zathura)/lib/zathura
+ln -s $(brew --prefix zathura-pdf-poppler)/libpdf-poppler.dylib $(brew --prefix zathura)/lib/zathura/libpdf-poppler.dylib
 
 brew clenup
 
