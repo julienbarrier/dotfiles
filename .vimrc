@@ -119,7 +119,7 @@ Plug 'junegunn/vim-plug' "let Plug update itself
 Plug 'junegunn/goyo.vim' "minimalist theme
 Plug 'junegunn/limelight.vim' "focus
 Plug 'itchyny/lightline.vim' "the bar
-Plug 'vim-latex/vim-latex'
+Plug 'lervag/vimtex'
 Plug 'godlygeek/tabular' "necessary for markdown
 Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-fugitive' "git
@@ -164,6 +164,10 @@ let g:seoul256_background = 233
 colorscheme bogster "molokai pleasant papaya default theme
 let g:vim_markdown_folding_disabled = 1 "on plug:vim-markdown, disable default folding
 let g:goyo_width = 81
+"vimtex-dependent config:
+if empty(v:servername) && exists('*remote_startserver')
+    call remote_startserver('VIM')
+endif
 
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
