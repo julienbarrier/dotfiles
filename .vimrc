@@ -79,8 +79,6 @@ set fileencoding=utf-8
 highlight NbSp ctermbg=lightgray guibg=lightred
 match NbSp /\%xa0/
 
-source ~/.vimrc_bepo            "French dvorak keyboard layourt (bépo)
-
 "spelling
 set spellfile   =~/.vim/spell/en.utf-8.add,~/.vim/spell/fr.utf-8.add
 set spelllang   =en,fr
@@ -143,6 +141,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'vim-perl/vim-perl'
 Plug 'preservim/vim-wordy'
 Plug 'gko/vim-coloresque'
+Plug 'sheoak/vim-bepoptimist'
 if has('nvim') || has('patch-8.0.902')
   Plug 'mhinz/vim-signify'
 else
@@ -165,11 +164,30 @@ colorscheme bogster "molokai pleasant papaya default theme
 let g:vim_markdown_folding_disabled = 1 "on plug:vim-markdown, disable default folding
 let g:goyo_width = 81
 "vimtex-dependent config:
-"if empty(v:servername) && exists('*remote_startserver')
-"    call remote_startserver('VIM')
-"endif
+if empty(v:servername) && exists('*remote_startserver')
+    call remote_startserver('VIM')
+endif
 let g:vimtex_complete_close_braces = 1
-let g:vimtex_view_method = 'zathura'
+let g:vimtex_view_method = 'skim'
+let g:vimtex_quickfix_mode=0
+" vim-bepoptimist clashes
+let g:surround_no_mappings = 1
+let g:ranger_map_keys = 0
+let g:bexec_no_mappings = 1
+let g:bclose_no_plugin_maps = 1
+let g:nvimgdb_disable_start_keymaps = 1
+let g:user_emmet_leader_key='<C-y>'
+let g:jedi#documentation_command = 'gh'   " vim Jedi needs to use the same key
+let g:jedi#completions_command = ""
+let g:jedi#rename_command = ''
+let g:jedi#usages_command = ''
+let g:jedi#goto_assignments_command = ''
+let g:jedi#goto_command = ''
+let g:table_mode_map_prefix = ',\|'
+let g:sneak#target_labels = "auiectsrnovdl"
+" hack for vim-sneak, to avoid remapping
+nmap , <Nop>
+
 
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
@@ -203,3 +221,6 @@ elseif &filetype == 'html'
     exec "!time go run %"
 endif
 endfunc
+
+"source ~/.vimrc_bepo            "French dvorak keyboard layourt (bépo)
+

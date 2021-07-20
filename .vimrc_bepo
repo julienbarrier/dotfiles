@@ -2,115 +2,7 @@
 "" mapping du clavier bépo->qwerty en mode normal
 ""
  
-" configuration des lettres
- 
-noremap b q
-noremap é w
-noremap p e
-noremap o r
-noremap è t
-noremap ^ y
-noremap v u
-noremap d i
-noremap l o
-noremap j p
-noremap z [
-noremap w ]
-noremap a a
-noremap u s
-noremap i d
-noremap e f
-noremap \ \
-noremap g ,
-noremap c h
-noremap t j
-noremap s k
-noremap r l
-noremap n ;
-noremap m '
-noremap ê <
-noremap à z
-noremap àà zz
-noremap y x
-noremap x c
-noremap . v
-noremap k b
-noremap ' n
-noremap q m
-noremap g ,
-noremap , g
-noremap ,, gg
-noremap h .
-noremap f /
-noremap B Q
-noremap É W
-noremap P E
-noremap O R
-noremap È T
-noremap ! Y
-noremap V U
-noremap D I
-noremap L O
-noremap J P
-noremap Z {
-noremap W }
-noremap A A
-noremap U S
-noremap I D
-noremap E F
-noremap ; G
-noremap C H
-noremap T J
-noremap S K
-noremap R L
-noremap N :
-noremap M "
-noremap Ç \|
-noremap Ê >
-noremap À Z
-noremap ÀÀ ZZ
-noremap Y X
-noremap X C
-noremap : V
-noremap K B
-noremap ? N
-noremap Q M
-noremap G <
-noremap H >
-noremap F ?
- 
-" configuration du copié sur le ç car y est sur la touche composé ^
- 
-noremap ç y
- 
-" configuration des nombres
- 
-noremap $ `
-noremap " 1
-noremap « 2
-noremap » 3
-noremap ( 4
-noremap ) 5
-noremap @ 6
-noremap + 7
-noremap - 8
-noremap / 9
-noremap * 0
-noremap = -
-noremap % =
-noremap # ~
-noremap 1 !
-noremap 2 @
-noremap 3 #
-noremap 4 $
-noremap 5 %
-noremap 6 ^
-noremap 7 &
-noremap 8 *
-noremap 9 (
-noremap 0 )
-noremap ° _
-noremap ` +
+set langmap=$`,\\"1,«2,»3,(4,)5,@6,+7,-8,/9,*0,=-,%=,bq,éw,pe,or,èt,^y,vu,di,lo,jp,z[,w],ç\\,aa,us,id,ef,\\,g,ch,tj,sk,rl,n\\;,m',ê<,àz,yx,xc,.v,kb,'n,qm,g\\,,h.,f/,#~,1!,2@,3#,4$,5%,6^,7&,8*,9(,0),°_,`+,BQ,ÉW,PE,OR,ÈT,!Y,VU,DI,LO,JP,Z{,W},Ç\|,AA,US,ID,EF,\\;G,CH,TJ,SK,RL,N:,M\\",Ê>,ÀZ,YX,XC,:V,KB,?N,QM,G<,H>,F?
 
 "NERDTree
 let NERDTreeMapOpenInTab='h'
@@ -126,3 +18,33 @@ let NERDTreeMapRefresh='O'
 let NERDTreeMapOpenInTab='è'
 let NERDTreeMapOpenInTabSilent='È'
 let NERDTreeMapActivateNode='l'
+
+" vim-surround, fix bepo-clash:
+let g:surround_no_mapping=1
+nmap ds <Plug>Dsurround
+nmap ls <Plug>Csurround
+nmap lS <Plug>CSurround
+nmap ys <Plug>Ysurround
+nmap yS <Plug>YSurround
+nmap yss <Plug>Yssurround
+nmap ySs <Plug>YSsurround
+nmap ySS <Plug>YSSurround
+xmap K <Plug>Vsurround
+xmap gK <Plug>VgSurround
+
+" vim-commentary, clash with bépo
+function! UnmapCommentary()
+    unmap gc
+    nunmap gcc
+    nunmap gcu
+endfunction
+
+xmap <leader>c <Plug>Commentary
+nmap <leader>c <Plug>Commentary
+omap <leader>c <Plug>Commentary
+nmap <leader>cc <Plug>CommentaryLine
+nmap l<leader>c <Plug>ChangeCommentary
+nmap <leader>cu <Plug>Commentary<Plug>Commentary
+
+" vimtex,, clash with bépo
+let g:vimtex_mapping_enabled = 0

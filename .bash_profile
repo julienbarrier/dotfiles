@@ -323,6 +323,8 @@ httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:      Grab
 
 alias python='python3'
 alias pip='pip3'
+alias vim='vim --servername vim'
+alias gvim='gvim --servername vim'
 
 ## GPG
 export GPG_TTY=$(tty)
