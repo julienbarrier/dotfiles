@@ -187,6 +187,7 @@ let g:table_mode_map_prefix = ',\|'
 let g:sneak#target_labels = "auiectsrnovdl"
 " hack for vim-sneak, to avoid remapping
 nmap , <Nop>
+let g:bepoptimist_switch_command=0 "  do not do not switch . and :
 
 
 " Exit Vim if NERDTree is the only window left.
