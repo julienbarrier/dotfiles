@@ -12,3 +12,6 @@
 !monokai.terminal/
 !.vim/
 !.jupyter/
+
+# but still
+.vim/plugged/*
