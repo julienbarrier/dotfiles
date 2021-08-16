@@ -36,7 +36,7 @@ brew clenup
 echo " Installing configuration files for you."
 cd ~/ && git init
 git remote add origin git@github.com:julienbarrier/dotfiles
-git pull origin master --allow-unrelated-historiea
+git pull origin master --allow-unrelated-histories
 
 echo " Installing python configuration."
 pip install jupyter
