@@ -1,4 +1,4 @@
-# call .bashrc
+call .bashrc
 if [ -f ~/.bashrc ]; then
 source ~/.bashrc
 fi
@@ -323,7 +323,7 @@ httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:      Grab
 
 alias python='python3'
 alias pip='pip3'
-alias vim='vim --servername vim'
+alias vim='mvim -v --servername vim'
 alias gvim='gvim --servername vim'
 
 ## GPG
