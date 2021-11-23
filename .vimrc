@@ -143,6 +143,7 @@ Plug 'preservim/vim-wordy'
 Plug 'gko/vim-coloresque'
 Plug 'sheoak/vim-bepoptimist'
 Plug 'wakatime/vim-wakatime'
+Plug 'ycm-core/YouCompleteMe'
 if has('nvim') || has('patch-8.0.902')
   Plug 'mhinz/vim-signify'
 else
