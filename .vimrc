@@ -157,6 +157,11 @@ Plug 'preservim/nerdtree' |
     \ Plug 'ryanoasis/vim-devicons' | "better to load this one at the end
 call plug#end()
 
+" Turn off YCM
+nnoremap <leader>y :let g:ycm_auto_trigger=0<CR>
+" Turn on YCM
+nnoremap <leader>Y :let g:ycm_auto_trigger=1<CR>
+
 "plugin dependent config
 set termguicolors
 "let g:molokai_original = 1
