@@ -16,17 +16,27 @@ set autoread
 au FocusGained,BufEnter * checktime
 
 set autoindent                  "indent according to previous line
+set smartindent                 "set smartindent
 set expandtab                   "use spaces instead of tabs
+set smarttab                    "smart tabs
+set tabstop=4
 set softtabstop =4              "tab key indents by 4 spaces
-set shiftwidth  =4              ">> indents by 4 sapeces
+set shiftwidth  =4              ">> indents by 4 spaces
 set shiftround                  ">> indents to next multiple of 'shiftwidth'
+autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype css setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType r setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType c setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType cpp setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 set backspace=indent,eol,start  "backspace works as we can expect
 set hidden                      "switch between buffers without having to save
 set laststatus  =2              "always sho statusline
 set display     =lastline       "show as much as possible of the last line
 
-set showmode                    "show current mode in command-line
+set noshowmode                  "use lightline instead of default vim
+set laststatus=2                "always show status line
 set showcmd                     "show typed key when more are expected
 
 set incsearch                   "highlight while searching
@@ -40,8 +50,10 @@ set splitright                  "open new windows right of the current window
 
 set cursorline                  "find current line quickly
 set wrapscan                    "searches wrap around end-of-file
-set report      =0              "always report changed lines
-set textwidth   =81             "the lines are 81 characters long
+set report=0                    "always report changed lines
+set textwidth=80                "insert linebreak at 80 characters
+let g:pandoc#formatting#textwidth=80
+let g:pandoc#formatting#mode = "h"
 
 "set list                       "show non-printable characters
 
@@ -144,6 +156,7 @@ Plug 'gko/vim-coloresque'
 Plug 'sheoak/vim-bepoptimist'
 Plug 'wakatime/vim-wakatime'
 Plug 'ycm-core/YouCompleteMe'
+Plug 'SirVer/ultisnips'
 if has('nvim') || has('patch-8.0.902')
   Plug 'mhinz/vim-signify'
 else
@@ -154,6 +167,7 @@ Plug 'preservim/nerdtree' |
     \ Plug 'tiagofumo/vim-nerdtree-syntax-highlight' |
     \ Plug 'PhilRunninger/nerdtree-buffer-ops' |
     \ Plug 'PhilRunninger/nerdtree-visual-selection' |
+    \ Plug 'jistr/vim-nerdtree-tabs' |
     \ Plug 'ryanoasis/vim-devicons' | "better to load this one at the end
 call plug#end()
 
@@ -175,6 +189,8 @@ let g:ycm_semantic_triggers.tex = [
       \ 're!\\includepdf(\s*\[[^]]*\])?\s*\{[^}]*',
       \ 're!\\includestandalone(\s*\[[^]]*\])?\s*\{[^}]*',
       \ ]
+
+au FileType python let b:AutoPairs = AutoPairsDefine({"f'" : "'", "r'" : "'", "b'" : "'"})
 
 "plugin dependent config
 set termguicolors
@@ -216,6 +232,31 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
     \ quit | endif
 " open NERDTree on any tab
 autocmd BufWinEnter * silent NERDTreeMirror
+
+let NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
+let g:nerdtree_open=0
+map <leader>n :call NERDTreeToggle()<CR>
+function NERDTreeToggle()
+    NERDTreeTabsToggle
+    if g:nerdtree_open ==1
+        let g:nerdtree_open=0
+    else
+        let g:nerdtree_open=1
+        wincmd p
+    endif
+endfunction
+
+function! StartUp()
+    if 0 == argc()
+        NERDTree
+    end
+endfunction
+autocmd VimEnter * call StartUp()
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 
 " ========================
