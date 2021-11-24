@@ -10,7 +10,7 @@
 * [Idiomatic vimrc](https://github.com/romainl/idiomatic-vimrc)
 
 ## Blogs
-* [Dmerej]([https://dmerej.info/blog/tags/neovim)
+* [Dmerej](https://dmerej.info/blog/tags/neovim)
 
 ## .vimrc
 * [@amix](https://github.com/amix/vimrc)
@@ -29,6 +29,7 @@
 * [@vgod](https://github.com/vgod/vimrc)
 
 ## Other
+* [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
 * [Seven habits of text editing](https://www.moolenaar.net/habits.html)
 * [Vim Awesome](https://vimawesome.com)
 * [Big Pile of Vim-like](https://vim.reversed.top)
